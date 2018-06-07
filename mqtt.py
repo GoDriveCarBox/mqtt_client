@@ -14,6 +14,8 @@ Modified:
               Short idle message + buffer status report
               Added buffer time to live  
               Added stats display on buffer
+  2018-05-23  Added reset idle message
+              Added session upload counter
 '''
 
 __VERSION__ = "0.98.2"
@@ -81,15 +83,15 @@ class GMqttClient():
     self.flag_display_buffstats = False
 
     self.last_msg_time = 0
+    self.idle_time = tm() - self.last_msg_time
     self.session_upload_counter = 0
-    self.idle_time = tm()- self.last_msg_time
     
     self.log("Starting MQTTClient ver.{}".format(self.__version__))
     self.log("Debug level: {}".format(debug_level))
 
     self._init_cache()
     self._setup_status_timer()
-    return;
+    return
 
 
   def _setup_status_timer(self):
@@ -256,7 +258,11 @@ class GMqttClient():
 
   def register_message(self, topic_data, payload_data):
     topic_values = [data for data in topic_data.split('/') if data != ""]
+    self.log("{}".format(topic_values))
     if topic_values[0] in self.valid_topics:
+      if self.idle_time > self.check_time * 60:
+        pass
+        #self.log("Message received. Idle time will reset.")
       msg_dict = {}
       for i in range(1,len(topic_values)):
         msg_dict[self.path_tokens[i-1]] = topic_values[i]
@@ -275,6 +281,8 @@ class GMqttClient():
       if self.df_crt_batch.shape[0] >= self.batch_size:
         self._display_buffer_stats(self.df_crt_batch)
         self._dispatch_and_clean()
+    else:
+        self.log("Received invalid topic {}!".format(topic_values[0]))
     return
 
 

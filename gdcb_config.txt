@@ -1,0 +1,34 @@
+{
+	"PREDICTOR_TABLE" : "Codes",
+	"CARS_TABLE" : "Cars",
+	"ACCOUNTS_TABLE" : "Accounts",
+	"RAWDATA_TABLE" : "RawData",
+	"CARSXCODES_TABLE": "CarsXCodes",
+        "HEX_CODE_FIELD": "Code",
+	"CODE_FIELD" : "ID",
+	"SIZE_FIELD": "Size",
+	"MIN_FIELD" : "MinVal",
+	"MAX_FIELD" : "MaxVal",
+	"MUL_FIELD" : "Mult",
+	"ADD_FIELD" : "Add",
+	"UNITS_FIELD" : "Units",
+	"ENABLED_FIELD" : "Enabled",
+
+
+	"RAW_IGNR_FIELD": "ID",
+	"RAW_NVAL_FIELD": "Value",
+	"RAW_SVAL_FIELD": "StrValue",
+	"RAW_CODE_FIELD": "CodeID",
+	"RAW_TIME_FIELD": "TimeStamp",
+	"RAW_CARI_FIELD": "CarID",
+        "RAW_VIEWABLE_VAL_FIELD" : "ViewVal",
+        "RAW_VIEWABLE_STR_FIELD" : "ViewStr",
+	"RAW_DEVSN_FIELD": "DeviceSN",
+
+
+	"VIEW_ALLDATA": "vw_getdata",
+
+
+	"DEVICE_SERVICE": "DevServiceTest0",
+	"DEVICE_PROTOCOL": "DevServiceTest0_Proto"
+}

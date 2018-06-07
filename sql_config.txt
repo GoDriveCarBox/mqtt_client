@@ -1,0 +1,8 @@
+{
+	"server" : "carbox.database.windows.net",
+	"database" : "Carbox",
+	"username" : "carbox@carbox",
+	"password" : "GDCBnpsf0517",
+	"driver" : "{ODBC Driver 13 for SQL Server}",
+	"datafolder" : "/home/carbox/GoogleDrive/_godrive_data/mqtt/_logs"
+}

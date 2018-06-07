@@ -1,0 +1,17 @@
+{
+ "BASE_FOLDER" : "GoogleDrive",
+ "APP_FOLDER"  : "_godrive_data/mqtt",
+ "SERVER"      : "mqtt-gdcb.westeurope.cloudapp.azure.com",
+ "PORT"	       : "1883",
+ "KEEP_ALIVE"  : "60",
+ "TOPIC_PIDS"  : "Car_fleet",
+ "BATCH_SIZE"  : "10000",
+ "PATH"        : ["VIN", "DeviceSN", "Code"],
+ "DEBUG_CODES" : ["fw_v","keep_alive","proto","new_batch"],
+ "BUFFER_TTL"  : 10,
+ "HOURS_REINIT_CACHE" : 8,
+ "HOURS_REINIT_GDCB"  : 1,
+ "MINUTES_CHECK_INTERVAL" : 5,
+ "NR_LOG_MESSAGES" : 1000,
+ "DEGUG_LEVEL_PRINT_ALL" : 2
+}
